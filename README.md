@@ -1,16 +1,51 @@
-# React + Vite
+# ProjectGotham — Frontend Battle 3.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Overview
 
-Currently, two official plugins are available:
+ProjectGotham is a responsive, SEO-ready frontend boilerplate built using React, Vite, and Tailwind CSS for Frontend Battle 3.0.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is prepared as a fast execution base for building polished frontend pages using a provided asset ZIP and problem statement under time pressure.
 
-## React Compiler
+## Live Deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Live Link: https://iit-bb-ui-hackathon.vercel.app/
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- Vercel
+
+## Features
+
+- Responsive navbar
+- Hero section
+- Feature section
+- Card grid / showcase section
+- Footer
+- SEO-ready title, description, and Open Graph metadata
+- Public assets folder flow tested
+- Production build tested with `npm run build`
+- Vercel deployment tested
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── FeatureSection.jsx
+│   ├── CardGrid.jsx
+│   └── Footer.jsx
+├── assets/
+├── data/
+├── styles/
+├── App.jsx
+├── index.css
+└── main.jsx
+
+public/
+└── assets/
