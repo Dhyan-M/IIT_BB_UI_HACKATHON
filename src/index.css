@@ -1,19 +1,44 @@
 @import "tailwindcss";
 
+:root {
+  --arctic-powder: #f1f6f4;
+  --forsythia: #ffc801;
+  --nocturnal-expedition: #114c5a;
+  --mystic-mint: #d9e8e2;
+  --deep-saffron: #ff9932;
+  --oceanic-noir: #172b36;
+  --ink: #071114;
+  --panel: rgba(17, 76, 90, 0.28);
+  --line: rgba(241, 246, 244, 0.14);
+  --muted: rgba(217, 232, 226, 0.72);
+  --soft: rgba(241, 246, 244, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--ink);
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 200, 1, 0.1), transparent 28rem),
+    radial-gradient(circle at 85% 18%, rgba(255, 153, 50, 0.09), transparent 24rem),
+    linear-gradient(135deg, #061013 0%, #0b1d24 44%, #172b36 100%);
+  color: var(--arctic-powder);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
+  text-rendering: optimizeLegibility;
 }
 
-* {
-  box-sizing: border-box;
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -21,6 +46,231 @@ img {
   display: block;
 }
 
-a {
-  text-decoration: none;
+.font-tech {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.glass-panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(241, 246, 244, 0.08), rgba(17, 76, 90, 0.16));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 244, 0.14);
+  background:
+    linear-gradient(145deg, rgba(241, 246, 244, 0.09), rgba(17, 76, 90, 0.18)),
+    radial-gradient(circle at top right, rgba(255, 200, 1, 0.08), transparent 18rem);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.1) 45%, transparent 70%);
+  opacity: 0;
+  transform: translateX(-55%);
+  transition: opacity 180ms ease-out, transform 380ms ease-in-out;
+}
+
+.premium-card:hover::before,
+.premium-card:focus-within::before {
+  opacity: 1;
+  transform: translateX(55%);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(241, 246, 244, 0.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 244, 0.065) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 0%, black 66%, transparent 100%);
+}
+
+.noise-layer {
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px);
+  background-size: 20px 20px, 28px 28px;
+  opacity: 0.34;
+}
+
+.hero-spotlight {
+  --spotlight-x: 58%;
+  --spotlight-y: 34%;
+}
+
+.hero-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--spotlight-x) var(--spotlight-y), rgba(255, 200, 1, 0.18), transparent 18rem),
+    radial-gradient(circle at calc(var(--spotlight-x) + 10%) calc(var(--spotlight-y) + 8%), rgba(217, 232, 226, 0.09), transparent 22rem);
+  transition: background-position 180ms ease-out;
+}
+
+.command-console {
+  --console-x: 50%;
+  --console-y: 35%;
+}
+
+.command-console::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--console-x) var(--console-y), rgba(255, 200, 1, 0.16), transparent 16rem);
+  opacity: 0.9;
+}
+
+.asset-icon {
+  filter: brightness(0) saturate(100%) invert(91%) sepia(11%) saturate(263%) hue-rotate(105deg) brightness(105%) contrast(92%);
+}
+
+.asset-icon-hot {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(91%) saturate(967%) hue-rotate(357deg) brightness(103%) contrast(102%);
+}
+
+.hover-lift {
+  transition: transform 180ms ease-out, border-color 180ms ease-out, background-color 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3);
+}
+
+.shine-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-button::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -55%;
+  width: 44%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-18deg);
+  transition: left 360ms ease-in-out;
+}
+
+.shine-button:hover::after {
+  left: 120%;
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 200, 1, 0.9), transparent);
+  animation: scan-drop 2.8s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.transition-fast {
+  transition: all 180ms ease-out;
+}
+
+.transition-structure {
+  transition: all 360ms ease-in-out;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-orb {
+  0%,
+  100% {
+    opacity: 0.46;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes scan-drop {
+  0% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(420px);
+    opacity: 0;
+  }
+}
+
+@keyframes meter-fill {
+  from {
+    transform: scaleX(0.55);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 420ms ease-out both;
+}
+
+.animate-orb {
+  animation: pulse-orb 3.6s ease-in-out infinite;
+}
+
+.meter-fill {
+  transform-origin: left;
+  animation: meter-fill 480ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
 }

@@ -1,7 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import FeatureSection from "./components/FeatureSection";
-import CardGrid from "./components/CardGrid";
+import BentoAccordion from "./components/BentoAccordion";
+import PricingMatrix from "./components/PricingMatrix";
+import WorkflowStrip from "./components/WorkflowStrip";
+import SocialProof from "./components/SocialProof";
+import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 function App() {
@@ -10,8 +13,11 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <FeatureSection />
-        <CardGrid />
+        <BentoAccordion />
+        <PricingMatrix />
+        <WorkflowStrip />
+        <SocialProof />
+        <CTA />
       </main>
       <Footer />
     </>

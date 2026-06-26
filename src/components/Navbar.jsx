@@ -1,26 +1,30 @@
+import { memo } from "react";
+
 function Navbar() {
   return (
-    <header className="w-full border-b border-slate-200 bg-white/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-extrabold tracking-tight text-slate-900">
-          ProjectGotham
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071114]/75 backdrop-blur-xl">
+      <nav className="section-shell flex h-16 items-center justify-between" aria-label="Primary navigation">
+        <a href="#top" className="flex items-center gap-3 text-sm font-semibold text-[var(--arctic-powder)]">
+          <span className="grid h-9 w-9 place-items-center rounded bg-[var(--forsythia)] text-[#071114]">AI</span>
+          <span>Armory AI</span>
         </a>
 
-        <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-          <a href="#features" className="hover:text-slate-950">Features</a>
-          <a href="#showcase" className="hover:text-slate-950">Showcase</a>
-          <a href="#faq" className="hover:text-slate-950">FAQ</a>
+        <div className="hidden items-center gap-7 text-sm text-[var(--muted)] md:flex">
+          <a className="transition-fast hover:text-white" href="#platform">Platform</a>
+          <a className="transition-fast hover:text-white" href="#intelligence">Intelligence</a>
+          <a className="transition-fast hover:text-white" href="#pricing">Pricing</a>
+          <a className="transition-fast hover:text-white" href="#proof">Proof</a>
         </div>
 
         <a
-          href="#cta"
-          className="rounded-full bg-slate-950 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+          href="#pricing"
+          className="transition-fast rounded border border-[var(--forsythia)]/70 px-4 py-2 text-sm font-semibold text-[var(--forsythia)] hover:bg-[var(--forsythia)] hover:text-[#071114]"
         >
-          Get Started
+          Build A Workflow
         </a>
       </nav>
     </header>
   );
 }
 
-export default Navbar;
+export default memo(Navbar);
